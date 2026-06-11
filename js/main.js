@@ -4,19 +4,19 @@
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-/* ===== Neural network hero canvas =====
-   Drifting nodes connected by proximity; the pointer acts as a
-   stimulus that brightens nearby synapses. */
-(function neuralCanvas() {
-  const canvas = document.getElementById("neuralCanvas");
+/* ===== Hero dot grid =====
+   A precise grid of ink dots; the pointer magnetizes nearby dots,
+   pulling them slightly and flipping them to blue. */
+(function dotGrid() {
+  const canvas = document.getElementById("gridCanvas");
   if (!canvas || prefersReducedMotion) return;
 
   const ctx = canvas.getContext("2d");
-  let width, height, nodes;
+  const GAP = 44;
+  const RADIUS = 1.4;
+  const PULL = 90; // pointer influence radius
+  let width, height, dots;
   const pointer = { x: -9999, y: -9999 };
-
-  const NODE_COLOR = "rgba(124, 108, 255, 0.9)";
-  const LINK_DIST = 150;
 
   function resize() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -25,66 +25,36 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
     canvas.width = width * dpr;
     canvas.height = height * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    seed();
-  }
 
-  function seed() {
-    const count = Math.min(110, Math.floor((width * height) / 14000));
-    nodes = Array.from({ length: count }, () => ({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.35,
-      vy: (Math.random() - 0.5) * 0.35,
-      r: 1.2 + Math.random() * 1.8,
-      phase: Math.random() * Math.PI * 2,
-    }));
-  }
-
-  function step(t) {
-    ctx.clearRect(0, 0, width, height);
-
-    for (const n of nodes) {
-      n.x += n.vx;
-      n.y += n.vy;
-      if (n.x < 0 || n.x > width) n.vx *= -1;
-      if (n.y < 0 || n.y > height) n.vy *= -1;
-    }
-
-    // synapses
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i + 1; j < nodes.length; j++) {
-        const a = nodes[i], b = nodes[j];
-        const dx = a.x - b.x, dy = a.y - b.y;
-        const dist = Math.hypot(dx, dy);
-        if (dist > LINK_DIST) continue;
-
-        const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
-        const pd = Math.hypot(mx - pointer.x, my - pointer.y);
-        const excite = Math.max(0, 1 - pd / 220); // pointer stimulus
-        const base = (1 - dist / LINK_DIST) * 0.22;
-
-        ctx.strokeStyle = excite > 0.05
-          ? `rgba(79, 216, 255, ${base + excite * 0.5})`
-          : `rgba(124, 108, 255, ${base})`;
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.moveTo(a.x, a.y);
-        ctx.lineTo(b.x, b.y);
-        ctx.stroke();
+    dots = [];
+    for (let x = GAP / 2; x < width; x += GAP) {
+      for (let y = GAP / 2; y < height; y += GAP) {
+        dots.push({ x, y });
       }
     }
+  }
 
-    // nodes with a gentle firing flicker
-    for (const n of nodes) {
-      const flicker = 0.65 + 0.35 * Math.sin(t / 600 + n.phase);
-      ctx.globalAlpha = flicker;
-      ctx.fillStyle = NODE_COLOR;
+  function step() {
+    ctx.clearRect(0, 0, width, height);
+    for (const d of dots) {
+      const dx = pointer.x - d.x;
+      const dy = pointer.y - d.y;
+      const dist = Math.hypot(dx, dy);
+      const influence = Math.max(0, 1 - dist / PULL);
+
+      let x = d.x, y = d.y;
+      if (influence > 0) {
+        x += dx * influence * 0.22;
+        y += dy * influence * 0.22;
+        ctx.fillStyle = "#1d2bff";
+      } else {
+        ctx.fillStyle = "rgba(12, 12, 12, 0.22)";
+      }
+
       ctx.beginPath();
-      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      ctx.arc(x, y, RADIUS + influence * 1.6, 0, Math.PI * 2);
       ctx.fill();
     }
-    ctx.globalAlpha = 1;
-
     requestAnimationFrame(step);
   }
 
@@ -126,7 +96,7 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
 
 /* ===== Count-up stats ===== */
 (function countUp() {
-  const nums = document.querySelectorAll(".fact-card__num[data-count]");
+  const nums = document.querySelectorAll("[data-count]");
   const io = new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {

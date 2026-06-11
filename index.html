@@ -4,26 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Javian Sandino — AI · Neurotech · Software</title>
-  <meta name="description" content="Javian Sandino is a Computer Science student at the University of Florida building at the intersection of brains, code, and music. AI & BCI researcher." />
+  <meta name="description" content="Javian Sandino is a Computer Science student at the University of Florida building at the intersection of brains, code, and music. AI & BCI researcher, DJ, hooper." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%237c6cff'/><circle cx='50' cy='50' r='18' fill='%230b0d14'/></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231d2bff'/><text x='50' y='68' font-family='Arial Black' font-size='52' font-weight='900' fill='%23f3f1ea' text-anchor='middle'>JS</text></svg>" />
 </head>
 <body>
 
   <!-- ===== Navigation ===== -->
   <header class="nav" id="nav">
-    <a class="nav__logo" href="#top">
-      <span class="nav__logo-pulse"></span>
-      js<span class="nav__logo-accent">.</span>
-    </a>
+    <a class="nav__logo" href="#top">JS<span class="nav__logo-mark">®</span></a>
     <nav class="nav__links" id="navLinks">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
+      <a href="#offclock">Off the Clock</a>
       <a href="#contact">Contact</a>
     </nav>
     <a class="nav__cta" href="mailto:javian.sandino@ufl.edu">Say hello</a>
@@ -34,38 +31,86 @@
 
   <!-- ===== Hero ===== -->
   <section class="hero" id="top">
-    <canvas id="neuralCanvas" aria-hidden="true"></canvas>
+    <canvas id="gridCanvas" aria-hidden="true"></canvas>
     <div class="hero__inner">
-      <p class="hero__eyebrow reveal">Hi, I'm</p>
-      <h1 class="hero__name reveal">Javian Sandino</h1>
-      <h2 class="hero__tagline reveal">
-        I build at the intersection of
-        <span class="word-rotate">
-          <span class="word-rotate__track" id="wordTrack">
-            <span>brains</span>
-            <span>code</span>
-            <span>music</span>
-            <span>people</span>
-            <span>brains</span>
-          </span>
-        </span>
-      </h2>
-      <p class="hero__blurb reveal">
-        Computer Science @ University of Florida · AI &amp; BCI Researcher.
-        I decode brain signals to fly drones, build software that helps people,
-        and believe the best engineering starts with a good conversation.
-      </p>
-      <div class="hero__actions reveal">
-        <a class="btn btn--primary" href="#projects">See my work</a>
-        <a class="btn btn--ghost" href="#contact">Get in touch</a>
+      <div class="hero__meta-row reveal">
+        <span>Computer Science — University of Florida</span>
+        <span>AI &amp; BCI Researcher</span>
+        <span>Gainesville, FL</span>
       </div>
-      <div class="hero__meta reveal">
-        <span class="hero__meta-item"><span class="dot dot--live"></span> Currently: decoding EEG to race drones</span>
+      <h1 class="hero__name reveal">
+        <span class="hero__name-line">Javian</span>
+        <span class="hero__name-line hero__name-line--outline">Sandino</span>
+      </h1>
+      <div class="hero__bottom reveal">
+        <p class="hero__tagline">
+          Building software, decoding brains,<br />
+          <span class="hero__tagline-accent">mixing records.</span>
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--ink" href="#projects">See the work</a>
+          <a class="btn btn--line" href="#contact">Get in touch</a>
+        </div>
       </div>
     </div>
-    <a class="hero__scroll" href="#about" aria-label="Scroll down">
-      <span class="hero__scroll-line"></span>
-    </a>
+  </section>
+
+  <!-- ===== Ticker ===== -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span>Neurotech ✦ Full-Stack ✦ DJ'ing ✦ Basketball ✦ AI Research ✦ Music ✦ Design ✦&nbsp;</span>
+      <span>Neurotech ✦ Full-Stack ✦ DJ'ing ✦ Basketball ✦ AI Research ✦ Music ✦ Design ✦&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- ===== About ===== -->
+  <section class="section" id="about">
+    <div class="section__inner">
+      <div class="section__head reveal">
+        <span class="section__num">01</span>
+        <span class="section__label">About</span>
+      </div>
+      <h2 class="section__title reveal">Curious about people.<br />Obsessed with the brain.</h2>
+      <div class="about__grid">
+        <div class="about__text reveal">
+          <p>
+            I'm a CS student at the <strong>University of Florida</strong> minoring in
+            Economics and Digital Arts &amp; Sciences — a formal way of saying I like
+            understanding how systems work, whether they're markets, machines, or minds.
+          </p>
+          <p>
+            What pulls me in most is <strong>neurotechnology</strong>. As a BCI
+            researcher I decode real-time EEG signals so people can fly drones with
+            nothing but focus. Turning a thought into motion is the closest thing
+            engineering has to wizardry.
+          </p>
+          <p>
+            Off the clock I'm <strong>behind a pair of decks or on a basketball
+            court</strong>. I love talking to people and figuring out what makes them
+            tick — reading a crowd, reading a defense, reading a signal. It's all
+            pattern recognition.
+          </p>
+        </div>
+        <div class="about__stats reveal">
+          <div class="stat">
+            <span class="stat__num"><span data-count="450">0</span>+</span>
+            <span class="stat__label">Study participants supported by a web app I engineered</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num"><span data-count="100">0</span>k</span>
+            <span class="stat__label">Images labeled &amp; transactions pipelined across projects</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num"><span data-count="9">0</span></span>
+            <span class="stat__label">Researchers on my BCI team — collaboration is the superpower</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">∞</span>
+            <span class="stat__label">Playlists made while debugging</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ===== EEG divider ===== -->
@@ -75,108 +120,54 @@
     </svg>
   </div>
 
-  <!-- ===== About ===== -->
-  <section class="section about" id="about">
-    <div class="section__inner">
-      <p class="section__label reveal">01 — About</p>
-      <h2 class="section__title reveal">Curious about people,<br/>obsessed with the brain.</h2>
-      <div class="about__grid">
-        <div class="about__text reveal">
-          <p>
-            I'm a CS student at the <strong>University of Florida</strong> minoring in
-            Economics and Digital Arts &amp; Sciences — which is a formal way of saying
-            I like understanding how systems work, whether they're markets, machines,
-            or minds.
-          </p>
-          <p>
-            What pulls me in most is <strong>neurotechnology</strong>. Right now I'm a
-            BCI researcher decoding real-time EEG signals so people can control drones
-            with nothing but focus. There's something magical about turning a thought
-            into motion — it's the closest thing to wizardry engineering has to offer.
-          </p>
-          <p>
-            Outside the lab, I'm happiest talking to people. I genuinely love
-            conversations — understanding what makes someone tick is its own kind of
-            signal processing. And when I'm not doing that, I'm probably making or
-            listening to <strong>music</strong>, the original brain-computer interface.
-          </p>
-        </div>
-        <div class="about__facts reveal">
-          <div class="fact-card">
-            <span class="fact-card__num" data-count="450">0</span>
-            <span class="fact-card__label">study participants supported by a web app I engineered</span>
-          </div>
-          <div class="fact-card">
-            <span class="fact-card__num" data-count="100">0</span><span class="fact-card__suffix">k</span>
-            <span class="fact-card__label">images labeled &amp; transactions pipelined across projects</span>
-          </div>
-          <div class="fact-card">
-            <span class="fact-card__num" data-count="9">0</span>
-            <span class="fact-card__label">researchers on my BCI team — collaboration is the real superpower</span>
-          </div>
-          <div class="fact-card">
-            <span class="fact-card__num">∞</span>
-            <span class="fact-card__label">playlists made while debugging</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ===== Experience ===== -->
-  <section class="section experience" id="experience">
+  <section class="section" id="experience">
     <div class="section__inner">
-      <p class="section__label reveal">02 — Experience</p>
-      <h2 class="section__title reveal">Where I've been<br/>putting neurons to work.</h2>
+      <div class="section__head reveal">
+        <span class="section__num">02</span>
+        <span class="section__label">Experience</span>
+      </div>
+      <h2 class="section__title reveal">Where I've been putting<br />neurons to work.</h2>
 
-      <div class="timeline">
-        <article class="timeline__item reveal">
-          <div class="timeline__marker"></div>
-          <div class="timeline__content">
-            <span class="timeline__date">Dec 2025 — Present</span>
-            <h3 class="timeline__role">BCI Researcher</h3>
-            <p class="timeline__org">Brain Controlled Drone Racing · Gainesville, FL</p>
-            <ul class="timeline__points">
-              <li>Built a Unity drone-racing simulation controlled by <em>real-time EEG</em>.</li>
+      <div class="xp">
+        <article class="xp__row reveal">
+          <span class="xp__date">Dec 2025 — Now</span>
+          <div class="xp__body">
+            <h3 class="xp__role">BCI Researcher</h3>
+            <p class="xp__org">Brain Controlled Drone Racing · Gainesville, FL</p>
+            <ul class="xp__points">
+              <li>Built a Unity drone-racing simulation controlled by real-time EEG.</li>
               <li>Stream live brain signals (~3–5 KB/s, Emotiv Insight) and decode them into commands for a physical Tello drone — concentration maps to speed.</li>
               <li>Signal processing &amp; feature extraction in Python (MNE) with machine learning, on a team of 9.</li>
             </ul>
-            <div class="tags">
-              <span>Python</span><span>MNE</span><span>Unity</span><span>EEG</span><span>ML</span>
-            </div>
+            <div class="tags"><span>Python</span><span>MNE</span><span>Unity</span><span>EEG</span><span>ML</span></div>
           </div>
         </article>
 
-        <article class="timeline__item reveal">
-          <div class="timeline__marker"></div>
-          <div class="timeline__content">
-            <span class="timeline__date">May 2025 — Dec 2025</span>
-            <h3 class="timeline__role">AI Researcher</h3>
-            <p class="timeline__org">UF Dept. of Computer &amp; Information Science</p>
-            <ul class="timeline__points">
+        <article class="xp__row reveal">
+          <span class="xp__date">May — Dec 2025</span>
+          <div class="xp__body">
+            <h3 class="xp__role">AI Researcher</h3>
+            <p class="xp__org">UF Dept. of Computer &amp; Information Science</p>
+            <ul class="xp__points">
               <li>Engineered a fullstack web app automating data collection for 450+ participants in a study on AI in education.</li>
               <li>Integrated 40+ data sources into weekly presentations that shaped the team's milestones.</li>
               <li>Ran correlation analyses and built visualizations in JASP; co-wrote technical documentation.</li>
             </ul>
-            <div class="tags">
-              <span>Fullstack</span><span>JASP</span><span>Data Viz</span><span>Research</span>
-            </div>
+            <div class="tags"><span>Fullstack</span><span>JASP</span><span>Data Viz</span><span>Research</span></div>
           </div>
         </article>
 
-        <article class="timeline__item reveal">
-          <div class="timeline__marker"></div>
-          <div class="timeline__content">
-            <span class="timeline__date">Mar 2025 — Dec 2025</span>
-            <h3 class="timeline__role">Repair Technician &amp; Sales Associate</h3>
-            <p class="timeline__org">Campus Phone Repair · Gainesville, FL</p>
-            <ul class="timeline__points">
+        <article class="xp__row reveal">
+          <span class="xp__date">Mar — Dec 2025</span>
+          <div class="xp__body">
+            <h3 class="xp__role">Repair Technician &amp; Sales</h3>
+            <p class="xp__org">Campus Phone Repair · Gainesville, FL</p>
+            <ul class="xp__points">
               <li>Diagnosed and repaired ~12 devices a week, driving ~$3,000 in revenue.</li>
               <li>Where I learned that listening to a customer is half the diagnostic.</li>
             </ul>
-            <div class="tags">
-              <span>Diagnostics</span><span>Customer Empathy</span>
-            </div>
+            <div class="tags"><span>Diagnostics</span><span>Customer Empathy</span></div>
           </div>
         </article>
       </div>
@@ -184,74 +175,74 @@
   </section>
 
   <!-- ===== Projects ===== -->
-  <section class="section projects" id="projects">
+  <section class="section" id="projects">
     <div class="section__inner">
-      <p class="section__label reveal">03 — Projects</p>
-      <h2 class="section__title reveal">Things I've built<br/>(and what they taught me).</h2>
+      <div class="section__head reveal">
+        <span class="section__num">03</span>
+        <span class="section__label">Projects</span>
+      </div>
+      <h2 class="section__title reveal">Things I've built.</h2>
 
       <div class="projects__grid">
-        <article class="project-card project-card--featured reveal">
-          <div class="project-card__glow"></div>
-          <span class="project-card__type">Featured · Web App</span>
-          <h3 class="project-card__title">Zettle — AI-Powered Financial Visualizer</h3>
-          <p class="project-card__desc">
-            A Go REST API pipelines 100,000 bank transactions into an interactive
-            knowledge graph, while Google Gemini surfaces spending patterns and
-            actionable insights. Frontend in TypeScript + D3.js.
+        <article class="project project--featured reveal">
+          <span class="project__type">Featured — Web App</span>
+          <h3 class="project__title">Zettle</h3>
+          <p class="project__desc">
+            AI-powered financial visualizer. A Go REST API pipelines 100,000 bank
+            transactions into an interactive knowledge graph while Google Gemini
+            surfaces spending patterns and actionable insights. Frontend in
+            TypeScript + D3.js.
           </p>
-          <div class="tags">
-            <span>Go</span><span>Python</span><span>Gemini API</span><span>TypeScript</span><span>D3.js</span><span>Tailwind</span>
-          </div>
+          <div class="tags tags--invert"><span>Go</span><span>Python</span><span>Gemini API</span><span>TypeScript</span><span>D3.js</span></div>
         </article>
 
-        <article class="project-card reveal">
-          <span class="project-card__type">Web App</span>
-          <h3 class="project-card__title">Personal Finance Manager</h3>
-          <p class="project-card__desc">
+        <article class="project reveal">
+          <span class="project__type">Web App</span>
+          <h3 class="project__title">Personal Finance Manager</h3>
+          <p class="project__desc">
             Full-stack budgeting app with a GraphQL API (8 queries, 12 mutations),
             JWT auth, bcrypt hashing, and an intuitive spending-progress UI.
           </p>
-          <div class="tags">
-            <span>React</span><span>Node.js</span><span>GraphQL</span><span>MongoDB</span>
-          </div>
+          <div class="tags"><span>React</span><span>Node.js</span><span>GraphQL</span><span>MongoDB</span></div>
         </article>
 
-        <article class="project-card reveal">
-          <span class="project-card__type">Research</span>
-          <h3 class="project-card__title">Turtle Species Identification</h3>
-          <p class="project-card__desc">
-            Trained a TensorFlow model to classify turtle species, weight, and size
-            from field images — 100,000+ labeled samples, ~90% accuracy.
+        <article class="project reveal">
+          <span class="project__type">Research</span>
+          <h3 class="project__title">Turtle Species ID</h3>
+          <p class="project__desc">
+            TensorFlow model classifying turtle species, weight, and size from field
+            images — 100,000+ labeled samples, ~90% accuracy.
           </p>
-          <div class="tags">
-            <span>Python</span><span>TensorFlow</span><span>OpenCV</span>
-          </div>
+          <div class="tags"><span>Python</span><span>TensorFlow</span><span>OpenCV</span></div>
         </article>
 
-        <article class="project-card reveal">
-          <span class="project-card__type">Open Source</span>
-          <h3 class="project-card__title">Live Hockey Plugin for Jarvis</h3>
-          <p class="project-card__desc">
+        <article class="project reveal">
+          <span class="project__type">Open Source</span>
+          <h3 class="project__title">Hockey Plugin for Jarvis</h3>
+          <p class="project__desc">
             Contributed daily game retrieval, team/league search, and league listings
             to an open-source assistant, with styled terminal output.
           </p>
-          <div class="tags">
-            <span>Python</span><span>RapidAPI</span><span>Colorama</span>
-          </div>
+          <div class="tags"><span>Python</span><span>RapidAPI</span><span>Colorama</span></div>
+        </article>
+
+        <article class="project project--link reveal">
+          <a href="https://github.com/Javian-Sandino" target="_blank" rel="noopener">
+            <span class="project__more">More on GitHub</span>
+            <span class="project__arrow">→</span>
+          </a>
         </article>
       </div>
-
-      <p class="projects__more reveal">
-        More experiments live on
-        <a href="https://github.com/Javian-Sandino" target="_blank" rel="noopener">GitHub →</a>
-      </p>
     </div>
   </section>
 
   <!-- ===== Skills ===== -->
-  <section class="section skills" id="skills">
+  <section class="section" id="skills">
     <div class="section__inner">
-      <p class="section__label reveal">04 — Skills</p>
+      <div class="section__head reveal">
+        <span class="section__num">04</span>
+        <span class="section__label">Skills</span>
+      </div>
       <h2 class="section__title reveal">The toolkit.</h2>
       <div class="skills__groups">
         <div class="skills__group reveal">
@@ -280,11 +271,45 @@
     </div>
   </section>
 
-  <!-- ===== Leadership ===== -->
-  <section class="section leadership" id="leadership">
+  <!-- ===== Off the clock ===== -->
+  <section class="section section--flush" id="offclock">
     <div class="section__inner">
-      <p class="section__label reveal">05 — Community</p>
-      <h2 class="section__title reveal">Building with people,<br/>not just for them.</h2>
+      <div class="section__head reveal">
+        <span class="section__num">05</span>
+        <span class="section__label">Off the Clock</span>
+      </div>
+      <h2 class="section__title reveal">Two turntables<br />and a jump shot.</h2>
+    </div>
+    <div class="hobbies">
+      <article class="hobby hobby--dj reveal">
+        <span class="hobby__label">Hobby — 001</span>
+        <h3 class="hobby__title">DJ'ing</h3>
+        <p class="hobby__desc">
+          Music is the original brain-computer interface. I mix and curate sets,
+          chasing the exact moment a room locks into the same rhythm — crowd-reading
+          is just real-time signal processing with better bass.
+        </p>
+      </article>
+      <article class="hobby hobby--ball reveal">
+        <span class="hobby__label">Hobby — 002</span>
+        <h3 class="hobby__title">Basketball</h3>
+        <p class="hobby__desc">
+          Pickup runs are my reset button. Reading a defense, calling the cut,
+          trusting your team — it's the fastest feedback loop I know, and the
+          best ideas tend to show up around the third game.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== Community ===== -->
+  <section class="section" id="leadership">
+    <div class="section__inner">
+      <div class="section__head reveal">
+        <span class="section__num">06</span>
+        <span class="section__label">Community</span>
+      </div>
+      <h2 class="section__title reveal">Building with people,<br />not just for them.</h2>
       <div class="leadership__grid">
         <article class="lead-card reveal">
           <h3>Society of Hispanic Professional Engineers</h3>
@@ -301,29 +326,29 @@
   </section>
 
   <!-- ===== Contact ===== -->
-  <section class="section contact" id="contact">
-    <div class="section__inner contact__inner">
-      <p class="section__label reveal">06 — Contact</p>
-      <h2 class="section__title section__title--center reveal">Let's have a conversation.</h2>
+  <section class="contact" id="contact">
+    <div class="contact__inner">
+      <div class="section__head section__head--dark reveal">
+        <span class="section__num">07</span>
+        <span class="section__label">Contact</span>
+      </div>
+      <h2 class="contact__title reveal">Let's have a<br /><span>conversation.</span></h2>
       <p class="contact__blurb reveal">
-        Whether it's neurotech, a project idea, a song recommendation, or just a
-        good question — my favorite interface is still talking to people.
+        Neurotech, a project idea, a song recommendation, or a pickup run —
+        my favorite interface is still talking to people.
       </p>
-      <a class="btn btn--primary btn--lg reveal" href="mailto:javian.sandino@ufl.edu">javian.sandino@ufl.edu</a>
+      <a class="contact__email reveal" href="mailto:javian.sandino@ufl.edu">javian.sandino@ufl.edu&nbsp;→</a>
       <div class="contact__links reveal">
         <a href="https://linkedin.com/in/jav-sandino" target="_blank" rel="noopener">LinkedIn</a>
-        <span aria-hidden="true">·</span>
         <a href="https://github.com/Javian-Sandino" target="_blank" rel="noopener">GitHub</a>
-        <span aria-hidden="true">·</span>
         <a href="tel:+19544450902">(954) 445-0902</a>
       </div>
     </div>
+    <footer class="footer">
+      <p>© 2026 Javian Sandino · Gainesville, FL</p>
+      <p>Powered by caffeine, curiosity, and a very long playlist.</p>
+    </footer>
   </section>
-
-  <footer class="footer">
-    <p>Designed &amp; built by Javian Sandino · Gainesville, FL</p>
-    <p class="footer__sub">Powered by caffeine, curiosity, and a very long playlist.</p>
-  </footer>
 
   <script src="js/main.js"></script>
 </body>
